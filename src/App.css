@@ -1,0 +1,58 @@
+.App {
+  text-align: center;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.App-header {
+  color: lightgray;
+  display: inline-flex;
+  font-size: 40px;
+  font-weight: 500;
+  margin: 20px 0;
+  
+  }
+
+/* It will align center-middle in the screen */
+.App-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* It will show colors items in 3X3 grid */
+.App-body-container {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 600px;
+  height: 600px;
+  justify-items: center;
+  align-items: center;
+  border: 1px solid #989898;
+}
+
+.App-body-item {
+  width: 100px;
+  height: 100px;
+  box-shadow: 4px 4px 6px #808088;
+}
+
+button {
+  margin: 0 10px;
+  margin-bottom: 20px;
+  width: 110px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  color: gray;
+}
+
+.App-action {
+  margin-top: 20px;
+}
+
+.App-action-shuffle {
+  background-color: lightpink;
+}
+
