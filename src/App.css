@@ -10,8 +10,14 @@
   font-size: 40px;
   font-weight: 500;
   margin: 20px 0;
-  
-  }
+  background: linear-gradient(
+    to right, 
+    hsl(98 100% 62%), 
+    hsl(204 100% 59%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 /* It will align center-middle in the screen */
 .App-body {
@@ -38,21 +44,61 @@
   box-shadow: 4px 4px 6px #808088;
 }
 
+.App-action {
+  margin-top: 40px;
+}
+
 button {
+  background: #1aab8a;
+  color: #fff;
+  border: none;
+  position: relative;
+  font-size: 1.6em;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
   margin: 0 10px;
-  margin-bottom: 20px;
-  width: 110px;
-  height: 40px;
   font-size: 14px;
   font-weight: 700;
-  color: gray;
+  box-shadow: 2px 2px 5px #808088;
+}
+button:hover {
+  background: #fff;
+  color: #1aab8a;
+}
+button:before,
+button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #1aab8a;
+  transition: 400ms ease all;
+}
+button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+button:hover:before,
+button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
 
-.App-action {
-  margin-top: 20px;
-}
-
-.App-action-shuffle {
+.App-action-pink-button {
   background-color: lightpink;
 }
-
+.App-action-pink-button:hover {
+  color: lightpink;
+  background: white;
+}
+.App-action-pink-button:before,
+.App-action-pink-button:after
+{
+  background: lightpink;
+}
