@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background: linear-gradient(to bottom, hsl(70 50% 100%), hsl(200 100% 60%));
+  background: linear-gradient(to top, #f39ca6, #a5daf7);
   min-height: 100vh;
 }
 
@@ -10,7 +10,7 @@
   font-size: 40px;
   font-weight: 500;
   margin: 20px 0;
-  background: linear-gradient(to right, hsl(4 100% 65%), hsl(250 120% 90%));
+  background: linear-gradient(to right, #e96272, #58bff7);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -63,10 +63,10 @@ button {
   font-size: 15px;
   font-weight: 700;
   box-shadow: 3px 3px 5px #808088;
-  background: linear-gradient(to right, hsl(200 70% 60%), hsl(5 100% 65%));
+  background: linear-gradient(to left, #f5687b, #24a0e2);
 }
 button:hover {
-  background: linear-gradient(to right, hsl(5 100% 65%), hsl(200 70% 60%));
+  background: linear-gradient(to right, #f5687b, #24a0e2);
 }
 button:before,
 button:after {
@@ -76,7 +76,7 @@ button:after {
   right: 0;
   height: 2px;
   width: 0;
-  background: linear-gradient(to right, hsl(5 100% 62%), hsl(204 100% 30%));
+  background: linear-gradient(to left, #f75c71, #25acf5);
   transition: 400ms ease all;
 }
 button:after {
@@ -92,12 +92,12 @@ button:hover:after {
 }
 
 .App-action-pink-button {
-  background: linear-gradient(to right, hsl(200 70% 60%), hsl(5 100% 65%));
+  background: linear-gradient(to right, #f5687b, #24a0e2);
 }
 .App-action-pink-button:hover {
-  background: linear-gradient(to right, hsl(5 100% 65%), hsl(200 70% 60%));
+  background: linear-gradient(to left, #f5687b, #24a0e2);
 }
 .App-action-pink-button:before,
 .App-action-pink-button:after {
-  background: linear-gradient(to right, hsl(5 100% 62%), hsl(204 100% 30%));
+  background: linear-gradient(to left, #f75c71, #25acf5);
 }

@@ -46,8 +46,7 @@ const App = () => {
     setColors(initialColors);
   };
 
-  /**  show notification for data status from backend.
-  /*   https://prnt.sc/1ed2ni2 */
+  // show notification for data status from backend
   const showToast = ({ type, message }) => {
     if (type === "info") {
       toast.info(message, {
