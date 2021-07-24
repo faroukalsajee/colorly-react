@@ -20,25 +20,17 @@ const colorsList = {
 };
 const initialColors = Object.values(colorsList);
 
-const shufflingArray = (array) => {
-  let currentIndex = array.length,
-    randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
+function shufflingArray(arr) {
+  // Fisher-Yates-Durstenfeld shuffle
+  for (let i = 0; i < arr.length - 1; i++) {
+    let j = i + Math.floor(Math.random() * (arr.length - i));
+    let temp = arr[j];
+    arr[j] = arr[i];
+    arr[i] = temp;
   }
 
-  return array;
-};
+  return arr;
+}
 
 const App = () => {
   // declare the color state to render html whenever this state changes
@@ -94,7 +86,7 @@ const App = () => {
         if (res.data.success) {
           showToast({
             type: "info",
-            message: "Saved successfully!",
+            message: "Saving Shuffle Order...",
           });
         } else {
           showToast({
@@ -137,7 +129,7 @@ const App = () => {
     // colors state will be mapped to render every color as div with correct background color
     <div className="App">
       <ToastContainer />
-      <header className="App-header">Color Shuffling</header>
+      <header className="App-header">Colorly</header>
 
       <div className="App-body">
         <div className="App-body-container">
@@ -148,16 +140,16 @@ const App = () => {
               key={index}
             ></div>
           ))}
-        </div>
-      </div>
 
-      <div className="App-action">
-        <button className="App-action-pink-button" onClick={onClickShuffle}>
-          Shuffle
-        </button>
-        <button onClick={onClickReset}>Reset</button>
-        <button onClick={onClickSave}>Save</button>
-        <button onClick={onClickLatestStatus}>Latest Status</button>
+          <div className="App-action">
+            <button className="App-action-pink-button" onClick={onClickShuffle}>
+              Shuffle Colors
+            </button>
+            <button onClick={onClickReset}>Reset Shuffle Order</button>
+            <button onClick={onClickSave}>Save Shuffle Order</button>
+            <button onClick={onClickLatestStatus}>Latest Saved Order</button>
+          </div>
+        </div>
       </div>
     </div>
   );
