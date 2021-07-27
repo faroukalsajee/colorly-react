@@ -20,33 +20,31 @@ const colorsList = {
 };
 const initialColors = Object.values(colorsList);
 
-function shufflingArray(arr) {
-  // Fisher-Yates-Durstenfeld shuffle
-  for (let i = 0; i < arr.length - 1; i++) {
-    let j = i + Math.floor(Math.random() * (arr.length - i));
-    let temp = arr[j];
-    arr[j] = arr[i];
-    arr[i] = temp;
+const shufflingArray = (colors) => {
+  for (let i = colors.length - 1; i > 0; i--) {
+    let swapIndex = Math.floor(Math.random() * (i + 1));
+    let current = colors[i];
+    let toSwap = colors[swapIndex];
+    colors[i] = toSwap;
+    colors[swapIndex] = current;
   }
 
-  return arr;
-}
+  return colors;
+};
 
 const App = () => {
-  // declare the color state to render html whenever this state changes
+  // declare color state to render html whenever this state changes
   const [colors, setColors] = useState(initialColors);
 
-  // Shuffle click event to shuffle current colors
   const onClickShuffle = () => {
     setColors(shufflingArray([...colors]));
   };
 
-  // Reset click event to reset current colors as initial colors
   const onClickReset = () => {
     setColors(initialColors);
   };
 
-  // show notification for data status from backend
+  // Save shuffle state button
   const showToast = ({ type, message }) => {
     if (type === "info") {
       toast.info(message, {
@@ -71,7 +69,6 @@ const App = () => {
     }
   };
 
-  // Save click event to save current status
   const onClickSave = () => {
     axios({
       method: "post",
@@ -102,7 +99,7 @@ const App = () => {
       });
   };
 
-  // Latest status click event to get the latest shuffled colors
+  // Get the latest shuffled colors
   const onClickLatestStatus = () => {
     axios
       .get(`${API_PATH}`)
@@ -125,7 +122,7 @@ const App = () => {
   };
 
   return (
-    // colors state will be mapped to render every color as div with correct background color
+    // color state will be mapped to render every color as div with correct background color
     <div className="App">
       <ToastContainer />
       <header className="App-header">Colorly</header>
