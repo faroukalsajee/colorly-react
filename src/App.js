@@ -18,6 +18,7 @@ const colorsList = {
   eight: "grey",
   nine: "black",
 };
+
 const initialColors = Object.values(colorsList);
 
 const shufflingArray = (colors) => {
@@ -122,7 +123,7 @@ const App = () => {
   };
 
   return (
-    // color state will be mapped to render every color as div with correct background color
+    // Render every color as div with correct background color
     <div className="App">
       <ToastContainer />
       <header className="App-header">Colorly</header>
